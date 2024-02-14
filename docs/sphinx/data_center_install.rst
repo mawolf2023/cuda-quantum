@@ -1,5 +1,5 @@
 Installation from Source
-*******************************************
++++++++++++++++++++++++++
 
 In most cases, you should not need to build CUDA Quantum from source. For the
 best experience, we recommend using a container runtime to avoid conflicts with
@@ -44,7 +44,7 @@ backend will not be included if you build CUDA Quantum from source.
 .. _compatibility-prebuilt-binaries:
 
 Prerequisites
-------------------------------------
+++++++++++++++++++++++++++++++++++++
 
 The following pre-requisites need to be satisfied both on the build system and
 on the host system, that is the system where the built CUDA Quantum binaries
@@ -81,7 +81,7 @@ software installed, you will need to make sure that the build is linking against
 the correct libraries and versions.
 
 Build Dependencies
-------------------------------------
+++++++++++++++++++++++++++++++++++++
 
 In addition to the prerequisites listed above, you will need to install the
 following prerequisites in your build environment prior to proceeding with 
@@ -151,7 +151,7 @@ need to make sure that the installation path matches the path you set for the
 corresponding environment variable(s).
 
 CUDA
-+++++++++++++++++++++++++++++++
+~~~~~~~~~~
 
 Building CUDA Quantum requires a full installation of the CUDA toolkit.
 The instructions are tested using version 11.8, but any CUDA 11 or 12 version
@@ -173,7 +173,7 @@ install CUDA 11.8:
     :end-before: [<CUDAInstall]
 
 Toolchain
-+++++++++++++++++++++++++++++++
+~~~~~~~~~~
 
 The compiler toolchain used for the build needs to support C++20 and must be a supported 
 `CUDA host compiler <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#supported-host-compilers>`__
@@ -213,7 +213,7 @@ environment variables to point to the respective compilers on your build system:
   during the build.
 
 Building CUDA Quantum
-------------------------------------
+++++++++++++++++++++++++++++++++++++
 
 This installation guide has been written for a specific version/commit of CUDA Quantum. 
 Make sure to obtain the source code for that version. 
@@ -246,7 +246,7 @@ is used.
   and have set the necessary environment variables as described in this document.
 
 Preparing the Installation
-------------------------------------
+++++++++++++++++++++++++++++++++++++
 
 To easily migrate the built binaries to the host system, we recommend creating a
 `self-extracting archive <https://makeself.io/>`__. To do so, download the 
@@ -269,7 +269,7 @@ You can then create a self-extracting archive with the command
         bash cudaq/migrate_assets.sh -t /opt/nvidia/cudaq
 
 Installation on the Host
-------------------------------------
+++++++++++++++++++++++++++++++++++++
 
 Make sure your host system satisfies the `Prerequisites`_ listed above.
 Copy the `install_cuda_quantum` file that you created following the instructions
@@ -313,7 +313,7 @@ that are not included in the migrated assets and are needed to use some of the
 CUDA Quantum features and components.
 
 CUDA Runtime Libraries
-+++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~
 
 To use GPU-acceleration in CUDA Quantum you will need to install the necessary 
 CUDA runtime libraries. While not necessary, we recommend installing 
@@ -328,7 +328,7 @@ commands, for example, install the necessary packages for the AlmaLinux 8 enviro
     :end-before: [<CUDARTInstall]
 
 MPI
-+++++++++++++++++++++++++++++++
+~~~~~~
 
 To work with all CUDA Quantum backends, a CUDA-aware MPI installation is required. 
 If you do not have an existing CUDA-aware MPI installation, you can build one from 
@@ -382,5 +382,3 @@ with the command above.
 
 .. TODO:
   For more information about building and activating a custom MPI plugin, see ...
-
-
