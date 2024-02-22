@@ -1,0 +1,1 @@
+/home/cudaq/cuda-quantum/scripts/build_cudaq.sh: line 143: cmake: command not found

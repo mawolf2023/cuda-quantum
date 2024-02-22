@@ -73,7 +73,72 @@ Building your first CUDA Quantum Program
 Running your first CUDA Quantum Program
 ----------------------------------------
 
-Todo
+
+
+After building a quantum kernel, you can execute it using either the sample or observe method to obtain results.
+
+3.1 Sample:
+
+The `sample` method takes a quantum state (a kernel) and any kernel arguments as inputs and returns a `SampleResult` object containing the counts from repeated measurement of the prepared quantum state. Measurement occurs in the Z basis by default. The `dump` method prints a dictionary containing the measurements and their respective counts. The following example builds a 2 qubit GHZ state and returns the sample results.
+
+
+.. literalinclude:: ../snippets/python/using/sample.py
+      :language: python
+      :start-after: [Begin Sample1]
+      :end-before: [End Sample1]
+
+By default, `sample` produces an ensemble of 1000 shots. This can be changed by specifying an integer argument for `shots_count`.
+
+.. literalinclude:: ../snippets/python/using/sample.py
+      :language: python
+      :start-after: [Begin Sample2]
+      :end-before: [End Sample2]
+
+A variety of methods can be used to extract useful information from a sample result such as the most probable measurement and its respective count. See the API specifications for more options.
+
+.. literalinclude:: ../snippets/python/using/sample.py
+      :language: python
+      :start-after: [Begin Sample3]
+      :end-before: [End Sample3]
+
+3.2 Observe:
+
+`Observe` is used to produce expectation values provided a quantum state and a spin operator. 
+
+First, an operator (i.e. a linear combination of Pauli strings) must be specified. To do so, import `spin` from cudaq. Any linear combination of the I, X, Y, and Z spin operators can be constructed with using spin.i(q), spin.x(q), spin.y(q), and spin.z(q), respectively, where q is the index of the target qubit. 
+
+Below is an example of a spin operator object consisting of a Z(0) operator, followed by construction of a kernel with a single qubit in an equal superposition. The Hamiltonian is printed to confirm it has been constructed properly.
+
+.. literalinclude:: ../snippets/python/using/observe.py
+      :language: python
+      :start-after: [Begin Observe1]
+      :end-before: [End Observe1]
+
+`Observe` takes a kernel, kernel arguments (if any),  and a spin operator as inputs and produces an `ObserveResult` object. The expectation value can be printed using the `expectation` method. It is important to exclude a measurement in the kernel, otherwise the expectation value will be determined from a collapsed classical state. For this example, the expected result of 0.0 is produced.
+
+.. literalinclude:: ../snippets/python/using/observe.py
+      :language: python
+      :start-after: [Begin Observe2]
+      :end-before: [End Observe2]
+
+Unlike `sample`, the default `shots_count` for `observe` is 1. This result is deterministic and equivalent to the expectation value in the limit of infinite shots.  To produce an approximate expectation value from sampling, `shots_count` can be specified to any integer.
+
+.. literalinclude:: ../snippets/python/using/observe.py
+      :language: python
+      :start-after: [Begin Observe3]
+      :end-before: [End Observe3]
+
+3.3. Running on a GPU
+
+Using `cudaq.set_target`, different targets can be specified for kernel execution. By default, the NVIDIA target will use a single GPU if it is available or fall back to the CPU otherwise.  To demonstrate the benefits of using a GPU. Below is an example of a 25 qubit GHZ state sampled 1 million times.  Using a GPU accelerates this task by more than 35x. To learn about all of the available targets and ways to accelerate kernel execution, visiting the —  page.
+
+.. literalinclude:: ../snippets/python/using/time.py
+      :language: python
+      :start-after: [Begin Time]
+      :end-before: [End Time]
+
+
+
 
 
 Language Fundamentals

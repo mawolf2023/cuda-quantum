@@ -1,0 +1,1 @@
+/home/cudaq/cuda-quantum/scripts/build_cudaq.sh: line 159: ninja: command not found
