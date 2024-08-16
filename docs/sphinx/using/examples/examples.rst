@@ -1,13 +1,13 @@
-*************************
-CUDA-Q by Example
+CUDA-Q Examples
 *************************
 
-Examples that illustrate how to use CUDA-Q for application development are available in C++ and Python.
+Examples that define the basic tools to build quantum algorithms with CUDA-Q
 
 .. toctree::
-   :maxdepth: 1
+   :caption: Contents 
+   :maxdepth: 2
 
-      Introduction <introduction.rst>
+      Building Kernels and Applying Gates <building.rst>
       Quantum Operations <quantum_operations.rst>
       Visualization <../../examples/python/tutorials/visualization.ipynb>
       Computing Expectation Values <expectation_values.rst>
@@ -19,3 +19,9 @@ Examples that illustrate how to use CUDA-Q for application development are avail
       Simulations with cuQuantum <cuquantum.rst>
       Noisy Simulation <noisy_simulation.rst>
       Using Quantum Hardware Providers <hardware_providers.rst>
+
+
+
+
+
+
