@@ -92,7 +92,14 @@ It is often helpful to define an initial state for a kernel. There are a few way
 Applying Gates
 +++++++++++++++++++++++++++++++++++++++++
 
-After a kernel is constructed, gates can be applied to start building out a quantum circuit.
+After a kernel is constructed, gates can be applied to start building out a quantum circuit. The image below shows all of the predefined gates redefined gates in CUDA-Q which can be referenced here.
+
+.. image:: ./images/allgates.png
+   :width: 400px
+   :align: center
+
+
+
 
 Gates can be applied to all qubits in a register:
 
