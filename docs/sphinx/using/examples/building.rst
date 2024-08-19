@@ -16,7 +16,7 @@ Kernels are the building blocks of quantum algorithms in CUDA-Q. A kernel is spe
         B = cudaq.qvector(3)
         C = cudaq.qvector(5)
 
-Kernels can also take a variety of objects as inputs. This is accomplished by specifying a parameter in the kernel definition along with the appropriate type. The kernel below takes an integer to define a register of N qubits.
+Inputs to kernels are defined by specifying a parameter in the kernel definition along with the appropriate type. The kernel below takes an integer to define a register of N qubits.
 
 .. code-block:: python
 
